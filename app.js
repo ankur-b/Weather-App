@@ -1,22 +1,22 @@
-const geocode = require('./utils/geocode')
-const forecast = require('./utils/forecast')
+const express = require('express')
 
-const address = process.argv[2]
+const app = express()
 
-if(!address){
-    console.log('Please provide an address')
-} else{
-    geocode(address, (error, {latitude,longitude,location}) => {
-        if(error){
-            return console.log(error)
-        }
-        forecast(latitude,longitude,(error,forcastData)=>{
-            if(error){
-                return console.log('error',error);
-            }
-            console.log(location)
-            console.log(forcastData);
-        })
-    })    
-}
+app.get('',(req,res)=>{
+    res.send('Hello express!')
+})
 
+app.get('/help',(req,res)=>{
+    res.send('Help page')
+})
+
+app.get('/about',(req,res)=>{
+    res.send('About')
+})
+app.get('/weather',(req,res)=>{
+    res.send('Your weather')
+})
+
+app.listen(3000,()=>{
+    console.log('Server is up on port 3000.')
+})
