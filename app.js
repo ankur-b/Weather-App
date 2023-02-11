@@ -39,10 +39,26 @@ app.get('/help',(req,res)=>{
     })
 })
 
+app.get('/help/*',(req,res)=>{
+    res.render('404',{
+        errorMessage:"Help article not found",
+        title:"404",
+        name:"Archman07"
+    })
+})
+
 app.get('/weather',(req,res)=>{
     res.send({
         forecast:'It is snowing',
         location:'Indore'
+    })
+})
+
+app.get('*',(req,res)=>{
+    res.render('404',{
+        errorMessage:"Page not found",
+        title:"404",
+        name:"Archman07"
     })
 })
 
