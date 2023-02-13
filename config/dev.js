@@ -1,0 +1,6 @@
+API_KEY = "f093301032f3edbe5eeeece96155de93"
+ACCESS_TOKEN = "pk.eyJ1IjoiYXJjaG1hbjA3IiwiYSI6ImNsZHY0ZTFpODA3cmszdnJ6Mjh0MjF0eWwifQ.0Tu72M02xLqy7P5ez0ELrg"
+module.exports = {
+    API_KEY,
+    ACCESS_TOKEN
+}
